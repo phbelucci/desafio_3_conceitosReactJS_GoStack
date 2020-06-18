@@ -29,13 +29,7 @@ function App() {
     // TODO
     await api.delete(`/repositories/${id}`)
 
-    api.get('/repositories').then(response => {
-      if(response.data){
-        setRepositories(response.data)
-      } else {
-        setRepositories(null)
-      }
-    })
+    setRepositories(repositories.filter(repository => repository.id !== id));
        
   }
 
